@@ -20,11 +20,7 @@ Route::get('/', function () {
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
+Route::resource('student', 'Admin\StudentController')->except(['destroy']);
+Route::get('student/{id}/delete', 'Admin\StudentController@destroy')->name('student.destroy');
 
-Auth::routes();
 
-Route::get('/home', 'HomeController@index')->name('home');
-
-Auth::routes();
-
-Route::get('/home', 'HomeController@index')->name('home');
